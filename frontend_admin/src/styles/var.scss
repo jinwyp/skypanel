@@ -1,0 +1,49 @@
+/* global css variable */
+$primary-color: var(--el-color-primary);
+
+:root {
+    --el-color-primary: #409EFF;
+    --el-color-primary-dark-2: #3375b9;
+    --el-color-primary-light-1: #53a8ff;
+    --el-color-primary-light-2: #66b1ff;
+    --el-color-primary-light-3: #79bbff;
+    --el-color-primary-light-4: #8cc5ff;
+    --el-color-primary-light-5: #a0cfff;
+    --el-color-primary-light-6: #b3d8ff;
+    --el-color-primary-light-7: #c6e2ff;
+    --el-color-primary-light-8: #d9ecff;
+    --el-color-primary-light-9: #ecf5ff;
+
+    --el-aside-logo-text-color: #303133;
+    --el-aside-border-color: #e4e7ed;
+
+    --el-menu-bg-color: #ffffff;
+    --el-menu-hover-bg-color: #cccccc;
+    --el-menu-active-bg-color: var(--el-color-primary-light-9);
+    --el-menu-text-color: #333333;
+    --el-menu-active-color: var(--el-color-primary);
+    --el-menu-hover-text-color: #333333;
+    --el-menu-horizontal-sub-item-height: 50px;
+
+    --el-header-logo-text-color: #303133;
+    --el-header-bg-color: #ffffff;
+    --el-header-text-color: #303133;
+    --el-header-text-color-regular: #606266;
+    --el-header-border-color: #e4e7ed;
+
+
+    
+
+    --el-menu-item-height: 56px;
+    --el-menu-sub-item-height: calc(var(--el-menu-item-height) - 6px);
+    --el-menu-horizontal-height: 60px;
+    --el-menu-horizontal-sub-item-height: 36px;
+    --el-menu-item-font-size: var(--el-font-size-base);
+    --el-menu-item-hover-fill: var(--el-color-primary-light-9);
+    --el-menu-border-color: var(--el-border-color);
+    --el-menu-base-level-padding: 20px;
+    --el-menu-level-padding: 20px;
+    --el-menu-icon-width: 24px
+  }
+
+

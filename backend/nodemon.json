@@ -1,0 +1,26 @@
+{
+    "verbose": true,
+    "ignore": [
+        ".git",
+        "*.test.js", 
+        "**/fixtures/**",
+
+        "bin",
+        "node_modules",
+        "testing",
+        "public",
+        "views",
+        "logs"
+    ],
+    "env": {
+        "NODE_ENV" : "production",
+        "DEBUG" : "koa-user:*"
+    },
+    "ext": "js, mjs, cjs, json",
+    "execMap": {
+        "js": "node",
+        "rb": "ruby",
+        "pde": "processing --sketch={{pwd}} --run"
+    }
+
+}

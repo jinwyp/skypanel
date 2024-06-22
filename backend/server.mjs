@@ -33,12 +33,17 @@ import ejsHelper from './koa/koa2_middleware/ejs-helper.mjs';
 import IPDeviceMiddleware from './koa/koa2_middleware/ip_device.mjs';
 import visitorLoggerMiddleware from './koa/koa2_middleware/visitor_logger.mjs';
 
+import errorHandlerMiddleware from './koa/koa2_middleware/error_handler.js';
+import responseFormatterMiddleware from './koa/koa2_middleware/response_formatter.js';
 
 const router = new Router();
 
 const App = new Koa();
 
 App.keys = [GConfig.cookieSecret];
+
+App.use(errorHandlerMiddleware(App, {env : GConfig.env}));     // 全局错误处理
+
 
 App.use(KoaLogger()) // Log Request, 记录请求
 App.use(KoaXResponseTime()) // Add Header X-Response-Time, 在返回的 Header 上增加响应时间
@@ -73,11 +78,13 @@ KoaEJS(App, {
 })
 App.use(ejsHelper()); // 设置 EJS 模板引擎的 Helper 在模板里面可以直接使用 page.title 等变量
 
+// 设置Json 返回格式
+App.use(responseFormatterMiddleware(/api/, {isInclude:true}));
 
 // Router Setting 路由设置
 App.use(RoutesAll.routes())
 
 
 App.listen(GConfig.port, () => {
-    console.log(`Server listening http://127.0.0.1:${GConfig.port}/ `);
+    GLogger.info(`Koa Server listening http://127.0.0.1:${GConfig.port}/ `);
 });

@@ -5,7 +5,7 @@
     "scripts": {
         "start": "npm run dev",
         "dev": "nodemon server.mjs",
-        "prod": "DEBUG=koa2-user:* NODE_ENV=production node server.js",
+        "prod": "DEBUG=koa-user:* NODE_ENV=production node server.js",
         "test": "NODE_ENV=unittest mocha --recursive testing/unit",
         "cover": "nyc npm test"
     },
@@ -26,7 +26,10 @@
         "koa-static": "^5.0.0",
         "koa-useragent": "^4.1.0",
         "moment": "^2.30.1",
-        "nanoid": "^5.0.7"
+        "nanoid": "^5.0.7",
+        "pino": "^9.2.0",
+        "pino-pretty": "^11.2.1",
+        "pino-roll": "^1.1.0"
     },
     "devDependencies": {
         "@types/koa__router": "^12.0.4",

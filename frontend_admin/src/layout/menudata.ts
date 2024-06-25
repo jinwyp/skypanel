@@ -1,42 +1,17 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { useI18n } from "vue-i18n";
-import { ElMessageBox, ElMessage } from "element-plus";
-import SubMenu from "@/layout/SubMenu.vue";
-
-const i18n = useI18n();
-
-const activeMenu = "/";
 const menuList = [
     {
-        "path": "/",
+        "path": "/home/index",
         "name": "home",
         "component": "/home/index",
         "meta": {
             "icon": "HomeFilled",
-            "title": "首页",
-            "titleKey": "leftmenu.index",
+            "title": 首页,
             "isLink": "",
             "isHide": false,
             "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": false
+            "isAffix": true,
+            "isKeepAlive": true
         }
-    },
-    {
-        "path": "/users",
-        "name": "users",
-        "component": "/home/index",
-        "meta": {
-            "icon": "Stamp",
-            "title": "用户管理",
-            "titleKey": "leftmenu.userManagement",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": false
-        },
     },
     {
         "path": "/appsystem",
@@ -44,8 +19,7 @@ const menuList = [
         "component": "/appsystem",
         "meta": {
             "icon": "MessageBox",
-            "title": "系统环境软件",
-            "titleKey": "leftmenu.appSystemManagement",
+            "title": "系统软件",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -61,7 +35,6 @@ const menuList = [
         "meta": {
             "icon": "Histogram",
             "title": "数据大屏",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": true,
@@ -76,7 +49,6 @@ const menuList = [
         "meta": {
             "icon": "MessageBox",
             "title": "超级表格",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -91,7 +63,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "使用 ProTable",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -106,7 +77,6 @@ const menuList = [
                         "meta": {
                             "icon": "Menu",
                             "title": "ProTable 详情",
-                            "titleKey": "leftmenu.index",
                             "isLink": "",
                             "isHide": true,
                             "isFull": false,
@@ -124,7 +94,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "使用 TreeFilter",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -139,7 +108,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "TreeFilter 详情",
-                    "titleKey": "leftmenu.index",
                     "activeMenu": "/proTable/useTreeFilter",
                     "isLink": "",
                     "isHide": true,
@@ -155,7 +123,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "使用 SelectFilter",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -170,7 +137,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "树形 ProTable",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -185,7 +151,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "复杂 ProTable",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -200,7 +165,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "ProTable 文档",
-                    "titleKey": "leftmenu.index",
                     "isLink": "https://juejin.cn/post/7166068828202336263/#heading-14",
                     "isHide": false,
                     "isFull": false,
@@ -217,7 +181,6 @@ const menuList = [
         "meta": {
             "icon": "Lock",
             "title": "权限管理",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -232,7 +195,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "菜单权限",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -247,7 +209,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "按钮权限",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -264,7 +225,6 @@ const menuList = [
         "meta": {
             "icon": "Briefcase",
             "title": "常用组件",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -279,7 +239,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "引导页",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -294,7 +253,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "标签页操作",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -309,7 +267,6 @@ const menuList = [
                         "meta": {
                             "icon": "Menu",
                             "title": "Tab 详情",
-                            "titleKey": "leftmenu.index",
                             "activeMenu": "/assembly/tabs",
                             "isLink": "",
                             "isHide": true,
@@ -327,7 +284,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "图标选择器",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -342,7 +298,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "分类筛选器",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -357,7 +312,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "树形筛选器",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -372,7 +326,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "SVG 图标",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -387,7 +340,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "文件上传",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -402,7 +354,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "批量添加数据",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -417,7 +368,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "富文本编辑器",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -432,7 +382,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "拖拽组件",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -449,7 +398,6 @@ const menuList = [
         "meta": {
             "icon": "Odometer",
             "title": "Dashboard",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -464,7 +412,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "数据可视化",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -481,7 +428,6 @@ const menuList = [
         "meta": {
             "icon": "Tickets",
             "title": "表单 Form",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -496,7 +442,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "超级 Form",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -511,7 +456,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "基础 Form",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -526,7 +470,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "校验 Form",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -541,7 +484,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "动态 Form",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -558,7 +500,6 @@ const menuList = [
         "meta": {
             "icon": "TrendCharts",
             "title": "ECharts",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -573,7 +514,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "水型图",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -588,7 +528,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "柱状图",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -603,7 +542,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "折线图",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -618,7 +556,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "饼图",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -633,7 +570,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "雷达图",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -648,7 +584,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "嵌套环形图",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -665,7 +600,6 @@ const menuList = [
         "meta": {
             "icon": "Stamp",
             "title": "自定义指令",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -680,7 +614,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "复制指令",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -695,7 +628,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "水印指令",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -710,7 +642,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "拖拽指令",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -725,7 +656,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "防抖指令",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -740,7 +670,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "节流指令",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -755,7 +684,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "长按指令",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -772,7 +700,6 @@ const menuList = [
         "meta": {
             "icon": "List",
             "title": "菜单嵌套",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -787,7 +714,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "菜单1",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -802,7 +728,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "菜单2",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -817,7 +742,6 @@ const menuList = [
                         "meta": {
                             "icon": "Menu",
                             "title": "菜单2-1",
-                            "titleKey": "leftmenu.index",
                             "isLink": "",
                             "isHide": false,
                             "isFull": false,
@@ -832,7 +756,6 @@ const menuList = [
                         "meta": {
                             "icon": "Menu",
                             "title": "菜单2-2",
-                            "titleKey": "leftmenu.index",
                             "isLink": "",
                             "isHide": false,
                             "isFull": false,
@@ -847,7 +770,6 @@ const menuList = [
                                 "meta": {
                                     "icon": "Menu",
                                     "title": "菜单2-2-1",
-                                    "titleKey": "leftmenu.index",
                                     "isLink": "",
                                     "isHide": false,
                                     "isFull": false,
@@ -862,7 +784,6 @@ const menuList = [
                                 "meta": {
                                     "icon": "Menu",
                                     "title": "菜单2-2-2",
-                                    "titleKey": "leftmenu.index",
                                     "isLink": "",
                                     "isHide": false,
                                     "isFull": false,
@@ -879,7 +800,6 @@ const menuList = [
                         "meta": {
                             "icon": "Menu",
                             "title": "菜单2-3",
-                            "titleKey": "leftmenu.index",
                             "isLink": "",
                             "isHide": false,
                             "isFull": false,
@@ -896,7 +816,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "菜单3",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -913,7 +832,6 @@ const menuList = [
         "meta": {
             "icon": "Tools",
             "title": "系统管理",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -928,7 +846,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "账号管理",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -943,7 +860,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "角色管理",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -958,7 +874,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "菜单管理",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -973,7 +888,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "部门管理",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -988,7 +902,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "字典管理",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -1003,7 +916,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "定时任务",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -1018,7 +930,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "系统日志",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -1035,7 +946,6 @@ const menuList = [
         "meta": {
             "icon": "Paperclip",
             "title": "外部链接",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -1050,7 +960,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "Bing 内嵌",
-                    "titleKey": "leftmenu.index",
                     "isLink": "",
                     "isHide": false,
                     "isFull": false,
@@ -1065,7 +974,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "Gitee 仓库",
-                    "titleKey": "leftmenu.index",
                     "isLink": "https://gitee.com/HalseySpicy/Geeker-Admin",
                     "isHide": false,
                     "isFull": false,
@@ -1080,7 +988,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "GitHub 仓库",
-                    "titleKey": "leftmenu.index",
                     "isLink": "https://github.com/HalseySpicy/Geeker-Admin",
                     "isHide": false,
                     "isFull": false,
@@ -1095,7 +1002,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "项目文档",
-                    "titleKey": "leftmenu.index",
                     "isLink": "https://docs.spicyboy.cn",
                     "isHide": false,
                     "isFull": false,
@@ -1110,7 +1016,6 @@ const menuList = [
                 "meta": {
                     "icon": "Menu",
                     "title": "掘金主页",
-                    "titleKey": "leftmenu.index",
                     "isLink": "https://juejin.cn/user/3263814531551816/posts",
                     "isHide": false,
                     "isFull": false,
@@ -1127,7 +1032,6 @@ const menuList = [
         "meta": {
             "icon": "InfoFilled",
             "title": "关于项目",
-            "titleKey": "leftmenu.index",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -1136,287 +1040,3 @@ const menuList = [
         }
     }
 ]
-
-const accordion = ref(true)
-
-const isCollapse = ref(false)
-
-const changeCollapse = () => {
-    isCollapse.value = !isCollapse.value
-};
-
-
-const language = ref("zh");
-
-const languageList = [
-  { label: "简体中文", value: "zh" },
-  { label: "English", value: "en" }
-];
-
-const changeLanguage = (lang: string) => {
-  i18n.locale.value = lang;
-  language.value = lang;
-};
-
-
-const username = "admin";
-
-
-// 退出登录
-const logout = () => {
-  ElMessageBox.confirm("您是否确认退出登录?", "温馨提示", {
-    confirmButtonText: "确定",
-    cancelButtonText: "取消",
-    type: "warning"
-  }).then(async () => {
-    // 1.执行退出登录接口
-    // await logoutApi();
-
-    // 2.清除 Token
-    // userStore.setToken("");
-
-    // 3.重定向到登陆页
-    // router.replace(LOGIN_URL);
-    ElMessage.success("退出登录成功！");
-  });
-};
-
-</script>
-
-
-
-<template>
-
-  <el-container class="layout">
-
-    <el-aside>
-      <div class="aside-box" :style="{ width: isCollapse ? '65px' : '210px' }">
-        <div class="logo flx-center">
-          <img class="logo-img" src="@/assets/images/logo.svg" alt="logo" />
-          <span v-show="!isCollapse" class="logo-text">天空面板</span>
-        </div>
-
-        <el-scrollbar>
-          <el-menu :router="false" :default-active="activeMenu" :collapse="isCollapse" :unique-opened="accordion" :collapse-transition="false" >
-            <SubMenu :menu-list="menuList" />
-          </el-menu>
-        </el-scrollbar>
-
-      </div>
-    </el-aside>
-
-    <el-container>
-      <el-header>
-        <div class="tool-bar-lf">
-            <el-icon class="collapse-icon" @click="changeCollapse">
-                <component :is="isCollapse ? 'expand' : 'fold'"></component>
-            </el-icon>
-        </div>
-        
-        <div class="tool-bar-ri">
-
-            <div class="header-icon">
-
-                <el-dropdown trigger="click" @command="changeLanguage">
-                    <i :class="'iconfont icon-zhongyingwen'" class="toolBar-icon"></i>
-                    <template #dropdown>
-                        <el-dropdown-menu>
-                            <el-dropdown-item v-for="item in languageList" :key="item.value" :command="item.value" :disabled="language === item.value">
-                                {{ item.label }}
-                            </el-dropdown-item>
-                        </el-dropdown-menu>
-                    </template>
-                </el-dropdown>
-
-                <div class="message">
-                    <el-popover placement="bottom" :width="310" trigger="click">
-                    <template #reference>
-                        <el-badge :value="5" class="item">
-                        <i :class="'iconfont icon-xiaoxi'" class="toolBar-icon"></i>
-                        </el-badge>
-                    </template>
-                    </el-popover>
-                </div>
-            </div>
-
-
-            <span class="username">{{ username }} {{ $t('home.welcome') }}</span>
-
-            <el-dropdown trigger="click">
-                <div class="avatar">
-                    <img src="@/assets/images/avatar.gif" alt="avatar" />
-                </div>
-                <template #dropdown>
-                <el-dropdown-menu>
-                    <el-dropdown-item divided @click="logout">
-                        <el-icon><SwitchButton /></el-icon>退出登录
-                    </el-dropdown-item>
-                </el-dropdown-menu>
-                </template>
-            </el-dropdown>
-
-        </div>
-
-      </el-header>
-
-      <el-main>
-        <RouterView />
-      </el-main>
-      
-    </el-container>
-
-
-
-  </el-container>
-</template>
-
-
-
-<style lang="scss" scoped>
-
-.el-container {
-  width: 100%;
-  height: 100%;
-  :deep(.el-aside) {
-    width: auto;
-    background-color: var(--el-menu-bg-color);
-    border-right: 1px solid var(--el-aside-border-color);
-    .aside-box {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: width 0.3s ease;
-      .el-scrollbar {
-        height: calc(100% - 55px);
-        .el-menu {
-          width: 100%;
-          overflow-x: hidden;
-          border-right: none;
-        }
-      }
-      .logo {
-        box-sizing: border-box;
-        height: 55px;
-        .logo-img {
-          width: 28px;
-          margin-right: 6px;
-          object-fit: contain;
-        }
-        .logo-text {
-          font-size: 21.5px;
-          font-weight: bold;
-          color: var(--el-aside-logo-text-color);
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-  .el-header {
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 55px;
-    padding: 0 15px;
-    background-color: var(--el-header-bg-color);
-    border-bottom: 1px solid var(--el-header-border-color);
-  }
-}
-
-
-
-.tool-bar-lf {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-
-.collapse-icon {
-  margin-right: 20px;
-  font-size: 22px;
-  color: var(--el-header-text-color);
-  cursor: pointer;
-}
-
-
-.tool-bar-ri {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 25px;
-
-  .header-icon {
-    display: flex;
-    align-items: center;
-
-    & > * {
-      margin-left: 21px;
-      color: var(--el-header-text-color);
-    }
-  }
-  .username {
-    margin: 0 20px;
-    font-size: 15px;
-    color: var(--el-header-text-color);
-  }
-}
-
-
-.message-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 260px;
-  line-height: 45px;
-}
-.message-list {
-  display: flex;
-  flex-direction: column;
-  .message-item {
-    display: flex;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--el-border-color-light);
-    &:last-child {
-      border: none;
-    }
-    .message-icon {
-      width: 40px;
-      height: 40px;
-      margin: 0 20px 0 5px;
-    }
-    .message-content {
-      display: flex;
-      flex-direction: column;
-      .message-title {
-        margin-bottom: 5px;
-      }
-      .message-date {
-        font-size: 12px;
-        color: var(--el-text-color-secondary);
-      }
-    }
-  }
-}
-
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 50%;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-
-
-
-</style>

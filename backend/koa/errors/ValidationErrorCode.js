@@ -5,22 +5,24 @@ const validationName = {
 
         usernameDBCreateError : {code:1801, message:"DB Error,  username create error !", field:'username'},
 
-        usernameRequired : {code:1001, message:"Field validation error,  username is required", field:'username'},
-        passwordRequired : {code:1002, message:"Field validation error,  password is required", field:'password'},
-        passwordNewRequired : {code:1003, message:"Field validation error,  new password is required", field:'newPassword'},
-        emailRequired : {code:1004, message:"Field validation error, Email is required", field:'email'},
-        mobileRequired : {code:1005, message:"Field validation error, mobile number is required", field:'mobilePhone'},
-        captchaRequired :  {code:1007, message:"Field validation error, captcha is required", field:'captcha'},
-        smsCodeRequired :  {code:1008, message:"Field validation error, sms code is required", field:'smsCode'},
+        usernameRequired : {code:1001, message:"Field validation error, username is required", field:'username'},
+        passwordRequired : {code:1002, message:"Field validation error, password is required", field:'password'},
+        passwordMatch : {code:1003, message:"Field validation error, password do not match with confirmPassword", field:'confirmPassword'},
+        passwordNewRequired : {code:1004, message:"Field validation error, new password is required", field:'newPassword'},
+        emailRequired : {code:1006, message:"Field validation error, Email is required", field:'email'},
+        mobileRequired : {code:1007, message:"Field validation error, mobile number is required", field:'mobilePhone'},
+        captchaRequired :  {code:1008, message:"Field validation error, captcha is required", field:'captcha'},
+        smsCodeRequired :  {code:1009, message:"Field validation error, sms code is required", field:'smsCode'},
 
 
-        userIdWrong : {code:1010, message:"Field validation error,  user id length must be 24", field:'_id'},
+        userIdWrong : {code:1010, message:"Field validation error, user id length must be 24", field:'_id'},
+        userIdIntWrong : {code:1011, message:"Field validation error, id format must be Int", field:'id'},
 
-        usernameWrong : {code:1011, message:"Field validation error,  username length must be 4-30, start with letter character", field:'username'},
-        passwordWrong : {code:1012, message:"Field validation error,  password length must be 6-30", field:'password'},
-        passwordNewWrong : {code:1013, message:"Field validation error,  new password length must be 6-30", field:'newPassword'},
-        emailWrong : {code:1014, message:"Field validation error, Email format wrong", field:'email'},
-        mobileWrong : {code:1015, message:"Field validation error, mobile number format wrong", field:'mobilePhone'},
+        usernameWrong : {code:1012, message:"Field validation error,  username length must be 4-30, start with letter character", field:'username'},
+        passwordWrong : {code:1013, message:"Field validation error,  password length must be 6-30", field:'password'},
+        passwordNewWrong : {code:1014, message:"Field validation error,  new password length must be 6-30", field:'newPassword'},
+        emailWrong : {code:1015, message:"Field validation error, Email format wrong", field:'email'},
+        mobileWrong : {code:1016, message:"Field validation error, mobile number format wrong", field:'mobilePhone'},
         captchaWrong :  {code:1017, message:"Field validation error, captcha length must be 4-4 or captcha expired", field:'captcha'},
         smsCodeWrong :  {code:1018, message:"Field validation error, sms code length must be 6-6 or sms code expired", field:'smsCode'},
 

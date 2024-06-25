@@ -19,7 +19,7 @@ const locale = zhCn;
     <el-config-provider :locale="locale">
         <Layout></Layout>
     </el-config-provider>
-  </template>
+</template>
 
 
 <style scoped>

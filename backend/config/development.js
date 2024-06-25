@@ -5,6 +5,6 @@
 
 
 module.exports = {
-    
+    viewStaticPath : '/static',
 }
 

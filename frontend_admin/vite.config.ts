@@ -12,10 +12,21 @@ export default defineConfig({
     }
   },
 
+  server: {
+    port: 4000,
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+      }
+    }
+  },
   build: {
+    manifest: true,
+
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'index.html'),
+        index: resolve(__dirname, 'admin_index.html'),
         registration: resolve(__dirname, 'registration.html'),
         login: resolve(__dirname, 'login.html'),
       },

@@ -20,7 +20,7 @@ function ejsHelper (options) {
             url : ctx.request.url
         }
 
-        ctx.state.staticPath = '/static';
+        ctx.state.staticPath = GConfig.viewStaticPath;
 
         ctx.state.user = null
 

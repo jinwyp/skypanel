@@ -25,9 +25,6 @@ const currentConfigFileName = require('../../config/' + env);
 let config = Object.assign({env : env, NODE_ENV: env}, defaultConfig, currentConfigFileName)
 
 
-
-debug("===== Config " + env + ":", util.inspect(config, {showHidden: false, depth: null}))
-
 // const log4jsConfig = require('./log4js-config')(config.pathLogs);
 // config.log4jsConfig = log4jsConfig
 
@@ -45,6 +42,27 @@ debug("===== Config " + env + ":", util.inspect(config, {showHidden: false, dept
 //     }
 // }
 
+let databaseType = 'sqlite';
+let databaseUrl = "file:" + config.pathSQLite + "/" + config.SQLitefilename;
+
+
+if (config.databaseType === 'mysql'){
+    databaseType = 'mysql'
+    databaseUrl = config.SQLiteUrl
+}
+if (config.databaseType === 'postgresql'){
+    databaseType = 'postgresql'
+    databaseUrl = config.SQLiteUrl
+}
+
+config.databaseUrl = databaseUrl
+
+
+config.ProjectRunningLocation = process.cwd()
+debug("===== Project Running Location (process.cwd()): ", process.cwd())
+// console.log("===== Project Root Path (process.cwd()): ", process.cwd())
+
+debug("===== Config " + env + ":", util.inspect(config, {showHidden: false, depth: null}))
 
 
 

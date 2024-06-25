@@ -9,18 +9,21 @@
       </template>
       <SubMenu :menu-list="subItem.children" />
     </el-sub-menu>
+    
     <el-menu-item v-else :index="subItem.path" @click="handleClickMenu(subItem)">
       <el-icon v-if="subItem.meta.icon">
         <component :is="subItem.meta.icon"></component>
       </el-icon>
       <template #title>
-        <span class="sle">{{ subItem.meta.title }}</span>
+        <span class="sle">{{ $t(subItem.meta.titleKey) }}</span>
       </template>
     </el-menu-item>
   </template>
 </template>
 
+
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
 
 defineProps<{ menuList: Menu.MenuOptions[] }>();

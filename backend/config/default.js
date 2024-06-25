@@ -8,12 +8,13 @@
 
 const path = require("path")
 
-module.exports = {
+const defaultConfig = {
 
     https    : false,
     domain   : "sky.jscool.net",
-    port     : 8088, // 程序运行的端口,
+    port     : 8000, // 程序运行的端口,
 
+    viewStaticPath : '/static',
     pathViewTemplate : path.join(__dirname, '../views/src'),
 
     cookieSecret   : "very_long_koa2_tekken_nina_jin_kazama_tgfcer",
@@ -27,8 +28,6 @@ module.exports = {
         overwrite: true,
         httpOnly: true,
         secure: false,
-
-
     },
 
     authToken : {
@@ -57,8 +56,18 @@ module.exports = {
     pathFileDownload : path.join(__dirname, "../../files/download"),
 
 
+
+
+    databaseType: "sqlite", // "sqlite
+
     // nedb 数据文件
-    pathDB : path.join(__dirname, "../../nedb/"),
+    pathNeDB : path.join(__dirname, "../nedb/"),
+
+    // SQLite 数据文件
+    pathSQLite : path.join(__dirname, "../db_sqlite"),
+    SQLitefilename : "database_sqlite.db",
+
 }
 
 
+module.exports = defaultConfig;

@@ -7,5 +7,6 @@ const path = require("path")
 
 module.exports = {
 
+    viewStaticPath : '/static',
 }
 
